@@ -7,9 +7,15 @@ export class DetailBusiness extends React.Component {
         this.props.getMovieDetail(this.props.match.params.id);
     }
     render() {
-        return (
-            <Detail movieDetail = {this.props.movieDetail} error = {this.props.error} isLoader = {this.props.isLoader} />
-        );
+        if(this.props.movieDetail.Response ==="True")
+        {
+            return (
+                <Detail movieDetail = {this.props.movieDetail} error = {this.props.error} isLoader = {this.props.isLoader} />
+            );
+        }
+        else{
+            return null;
+        }
     }
 }
 DetailBusiness.propTypes = {
